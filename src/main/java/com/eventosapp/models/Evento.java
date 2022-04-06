@@ -1,11 +1,10 @@
 package com.eventosapp.models;
 
 import java.io.Serializable;
+import java.util.List;
+import javax.persistence.*;
+import javax.persistence.OneToMany;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
 @Entity
 public class Evento implements Serializable {
@@ -20,19 +19,10 @@ public class Evento implements Serializable {
 	private String local;
 	private String data;
 	private String horario;
-	
-	public Evento() {}
-	
-	public Evento(String nome, String local, String data, String horario) {
-		super();
-		this.nome = nome;
-		this.local = local;
-		this.data = data;
-		this.horario = horario;
-	}
-	
-	
-	
+
+	@OneToMany//um evento para muitos convidados
+	private List<Convidado>convidados;
+
 	public long getCodigo() {
 		return codigo;
 	}

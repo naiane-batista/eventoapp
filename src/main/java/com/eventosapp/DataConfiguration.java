@@ -12,8 +12,7 @@ import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
 
-@Configuration
-//@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
+
 public class DataConfiguration {
 	
 	// esse bean configura o banco
